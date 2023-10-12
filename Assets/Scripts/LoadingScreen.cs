@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private GameObject thisScreen;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private AudioSource thisMusic;
-    [SerializeField] private AudioSource enterEffect;
-    [SerializeField] private AudioClip enterSound;
+    [SerializeField] private TextMeshProUGUI exitText;
+    [SerializeField] private TextMeshProUGUI enterText;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,30 @@ public class LoadingScreen : MonoBehaviour
     public void ClickEnterGame()
     {
         Invoke("EnterNow", 2.5f);
+    }
+
+    public void EnterTextColor()
+    {
+        if (enterText.color == Color.white)
+        {
+            enterText.color = Color.cyan;
+        }
+        else
+        {
+            enterText.color = Color.white;
+        }
+    }
+
+    public void ExitTextColor()
+    {
+        if (exitText.color == Color.red)
+        {
+            exitText.color = Color.magenta;
+        }
+        else
+        {
+            exitText.color = Color.red;
+        }
     }
 
     private void EnterNow()
