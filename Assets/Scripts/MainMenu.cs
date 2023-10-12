@@ -7,9 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject thisScreen;
     [SerializeField] private GameObject playScreen;
-    [SerializeField] private AudioSource thisMusic;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject playCamera;
+    [SerializeField] private AudioSource thisMusic;
 
     // Start is called before the first frame update
     void Start()
