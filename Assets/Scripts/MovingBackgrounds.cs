@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class MovingBackgrounds : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class MovingBackgrounds : MonoBehaviour
     private float imageStartPosition;
     [SerializeField] private GameObject playCamera;
     [SerializeField] private float movementEffect;
+    [SerializeField] private float cameraSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class MovingBackgrounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(new Vector3(1, 0, 0) * (cameraSpeed * Time.deltaTime));
+
         float _currentImagePosition = (playCamera.transform.position.x * (1 - movementEffect));
         float _distanceMoved = (playCamera.transform.position.x * movementEffect);
 
