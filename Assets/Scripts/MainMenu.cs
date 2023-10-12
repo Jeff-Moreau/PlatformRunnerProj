@@ -7,12 +7,14 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject thisScreen;
     [SerializeField] private GameObject playScreen;
-    [SerializeField] private AudioSource worldMusic;
+    [SerializeField] private AudioSource thisMusic;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject playCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        thisMusic.Play();
     }
 
     // Update is called once per frame
@@ -23,7 +25,11 @@ public class MainMenu : MonoBehaviour
 
     public void ClickStartGame()
     {
-        worldMusic.Stop();
+        thisScreen.SetActive(false);
+        thisMusic.Stop();
+        mainCamera.SetActive(false);
+        playCamera.SetActive(true);
+        playScreen.SetActive(true);
     }
 
     public void ClickExitGame()
