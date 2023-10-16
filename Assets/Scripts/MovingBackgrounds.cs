@@ -1,22 +1,20 @@
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class MovingBackgrounds : MonoBehaviour
 {
-    private float imageLength;
-    private float imageStartPosition;
     [SerializeField] private GameObject playCamera;
     [SerializeField] private float movementEffect;
     [SerializeField] private float cameraSpeed;
 
-    // Start is called before the first frame update
+    private float imageLength;
+    private float imageStartPosition;
+
     void Start()
     {
         imageStartPosition = transform.position.x;
         imageLength = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(new Vector3(1, 0, 0) * (cameraSpeed * Time.deltaTime));

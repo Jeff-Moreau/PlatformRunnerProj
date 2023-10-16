@@ -1,19 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TestBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isGround;
 
-    // Update is called once per frame
-    void Update()
+    private bool GetIsGround() { return isGround; }
+
+    private void Start()
     {
-        
+        isGround = true;
     }
 
     private void OnBecameInvisible()
