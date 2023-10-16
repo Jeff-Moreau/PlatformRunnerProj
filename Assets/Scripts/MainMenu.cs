@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject playCamera;
     [SerializeField] private AudioSource thisMusic;
 
-    void Start()
+    private void Start()
     {
         thisMusic.Play();
     }

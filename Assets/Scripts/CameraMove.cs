@@ -6,7 +6,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     [SerializeField] private float moveSpeed;
 
-    void Update()
+    private void Update()
     {
         transform.Translate(new Vector3(1, 0, 0) * (cameraSpeed * Time.deltaTime));
 

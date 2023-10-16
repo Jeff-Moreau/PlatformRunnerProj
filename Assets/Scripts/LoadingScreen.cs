@@ -11,7 +11,7 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private AudioSource thisMusic;
     [SerializeField] private List<Button> buttons;
 
-    void Start()
+    private void Start()
     {
         thisMusic.Play();
     }

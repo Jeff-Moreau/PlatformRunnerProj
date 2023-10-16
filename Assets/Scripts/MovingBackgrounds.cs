@@ -9,13 +9,13 @@ public class MovingBackgrounds : MonoBehaviour
     private float imageLength;
     private float imageStartPosition;
 
-    void Start()
+    private void Start()
     {
         imageStartPosition = transform.position.x;
         imageLength = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    void Update()
+    private void Update()
     {
         transform.Translate(new Vector3(1, 0, 0) * (cameraSpeed * Time.deltaTime));
 

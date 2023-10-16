@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)  && isGrounded)
         {
