@@ -3,7 +3,7 @@ using System.Diagnostics.Tracing;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnOne : MonoBehaviour
+public class SpawnTwo : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject platform;
@@ -28,8 +28,8 @@ public class SpawnOne : MonoBehaviour
         timeCounter -= Time.deltaTime;
 
 
-        float randPlat = Random.Range(1, 5);
-        float randTime = Random.Range(0, 2);
+        float randPlat = Random.Range(1, 3);
+        float randTime = Random.Range(3, 7);
 
         if (platformCount == randPlat)
         {

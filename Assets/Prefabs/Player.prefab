@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBody: {fileID: 3817005039266523329}
-  jumpForce: 325
-  controllerJumpForce: 325
+  jumpForce: 356
+  controllerJumpForce: 356
   soundSource: {fileID: 293887452277163339}
   pickupSound: {fileID: 8300000, guid: 61627738327588d41b9f337ed2972219, type: 3}
 --- !u!50 &3817005039266523329
@@ -233,7 +233,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0045922995, y: -0.37957668}
+  m_Offset: {x: -0.0035889149, y: -0.38358963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -244,7 +244,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66530824, y: 0.3489771}
+  m_Size: {x: 0.63119745, y: 0.35700297}
   m_EdgeRadius: 0
 --- !u!114 &2743570595608713569
 MonoBehaviour:
