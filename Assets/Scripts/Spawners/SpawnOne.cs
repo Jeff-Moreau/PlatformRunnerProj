@@ -3,16 +3,13 @@ using System.Diagnostics.Tracing;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnTwo : MonoBehaviour
+public class SpawnOne : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
-    [SerializeField] private GameObject platform;
-
-    private List<Transform> positions;
+    [SerializeField] private List<GameObject> platforms;
 
     private float timeCounter;
     private const float REFRESHTIME = 1;
-    private bool canPlace;
     private int platformCount;
     private bool spawn;
 
@@ -27,9 +24,7 @@ public class SpawnTwo : MonoBehaviour
     {
         timeCounter -= Time.deltaTime;
 
-
-        float randPlat = Random.Range(1, 3);
-        float randTime = Random.Range(3, 7);
+        float randPlat = Random.Range(1, 4);
 
         if (platformCount == randPlat)
         {
@@ -37,22 +32,17 @@ public class SpawnTwo : MonoBehaviour
         }
         else if (timeCounter <= 0 && spawn)
         {
-            Instantiate(platform, new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
+            Instantiate(platforms[Random.Range(0, platforms.Count)], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
             timeCounter = REFRESHTIME;
             platformCount++;
         }
         else if (timeCounter <= 0 && !spawn)
         {
+        float randTime = Random.Range(1, randPlat/2);
             timeCounter = randTime;
             platformCount = 0;
             spawn = true;
         }
 
-    }
-
-    private void Resetplatforms()
-    {
-        platformCount = 0;
-        spawn = true;
     }
 }

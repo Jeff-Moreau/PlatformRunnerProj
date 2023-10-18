@@ -28,7 +28,7 @@ public class JetPackPickup : MonoBehaviour, ICollectable
     {
         if (collision.gameObject.layer == 3)
         {
-
+            Destroy(gameObject);
         }
     }
 }
