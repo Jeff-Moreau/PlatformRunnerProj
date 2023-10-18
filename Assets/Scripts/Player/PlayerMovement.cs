@@ -5,8 +5,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D myBody;
     [SerializeField] private float jumpForce;
     [SerializeField] private float controllerJumpForce;
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip pickupSound;
 
     private bool isGrounded;
+
+    private void Start()
+    {
+
+    }
 
     private void Update()
     {
