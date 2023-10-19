@@ -131,6 +131,7 @@ MonoBehaviour:
   soundSource: {fileID: 293887452277163339}
   jumpSound: {fileID: 8300000, guid: 546493d861893fa41a1881b434836c61, type: 3}
   pickupSound: {fileID: 8300000, guid: 61627738327588d41b9f337ed2972219, type: 3}
+  pickupSpot: {fileID: 2222366948391584157, guid: f0845db7eb78d0c44937e0378e3f36bc, type: 3}
 --- !u!50 &3817005039266523329
 Rigidbody2D:
   serializedVersion: 4
