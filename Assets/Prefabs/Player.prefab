@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4076704772606334823}
   - component: {fileID: 4652357812604181371}
   - component: {fileID: 2743570595608713569}
+  - component: {fileID: 8508356632007927902}
   - component: {fileID: 293887452277163339}
   m_Layer: 3
   m_Name: Player
@@ -128,6 +129,7 @@ MonoBehaviour:
   jumpForce: 356
   controllerJumpForce: 356
   soundSource: {fileID: 293887452277163339}
+  jumpSound: {fileID: 8300000, guid: 546493d861893fa41a1881b434836c61, type: 3}
   pickupSound: {fileID: 8300000, guid: 61627738327588d41b9f337ed2972219, type: 3}
 --- !u!50 &3817005039266523329
 Rigidbody2D:
@@ -258,6 +260,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10677766cc4a664a9f623e2ba2b8da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8508356632007927902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177356286220349581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.32500005, y: -0.5450001, z: 0}
+  - {x: -0.32500005, y: 0.5450001, z: 0}
+  - {x: 0.32500005, y: 0.5450001, z: 0}
+  - {x: 0.32500005, y: -0.5450001, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -151642
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.32500005, y: 0.5450001, z: 0}
 --- !u!82 &293887452277163339
 AudioSource:
   m_ObjectHideFlags: 0
@@ -268,10 +300,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 61627738327588d41b9f337ed2972219, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.35
+  m_Pitch: 1.21
   Loop: 0
   Mute: 0
   Spatialize: 0

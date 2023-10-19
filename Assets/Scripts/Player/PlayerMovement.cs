@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float controllerJumpForce;
     [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip pickupSound;
 
+    private bool doubleJump = false;
     private bool isGrounded;
 
     private void Start()
@@ -20,11 +22,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             myBody.AddForce(Vector2.up * jumpForce);
+            soundSource.PlayOneShot(jumpSound);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && doubleJump)
+        {
+            myBody.AddForce(Vector2.up * jumpForce);
+            soundSource.PlayOneShot(jumpSound);
+            doubleJump = false;
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             myBody.AddForce(Vector2.up * controllerJumpForce);
+            soundSource.PlayOneShot(jumpSound);
         }
     }
 
@@ -50,5 +60,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            doubleJump = true;
+            soundSource.PlayOneShot(pickupSound);
+        }
+
     }
 }
