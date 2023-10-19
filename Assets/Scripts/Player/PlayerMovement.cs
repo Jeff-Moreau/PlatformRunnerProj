@@ -3,12 +3,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D myBody;
-    [SerializeField] private float jumpForce;
-    [SerializeField] private float controllerJumpForce;
-    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private Animator myAnimator;
+    [SerializeField] private AudioSource audioOut;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip pickupSound;
-    [SerializeField] private GameObject pickupSpot;
+
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float controllerJumpForce;
 
     private bool doubleJump = false;
     private bool isGrounded;
@@ -23,25 +24,32 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             myBody.AddForce(Vector2.up * jumpForce);
-            soundSource.PlayOneShot(jumpSound);
-
+            audioOut.PlayOneShot(jumpSound);
+            myAnimator.SetLayerWeight(1, 0);
+            myAnimator.SetLayerWeight(3, 1);
         }
         else if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && doubleJump)
         {
             myBody.AddForce(Vector2.up * jumpForce);
-            soundSource.PlayOneShot(jumpSound);
+            audioOut.PlayOneShot(jumpSound);
             doubleJump = false;
+            myAnimator.SetLayerWeight(1, 0);
+            myAnimator.SetLayerWeight(3, 1);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            myAnimator.SetLayerWeight(1, 0);
+            myAnimator.SetLayerWeight(3, 1);
             myBody.AddForce(Vector2.up * controllerJumpForce);
-            soundSource.PlayOneShot(jumpSound);
+            audioOut.PlayOneShot(jumpSound);
         }
         else if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump)
         {
+            myAnimator.SetLayerWeight(1, 0);
+            myAnimator.SetLayerWeight(3, 1);
             myBody.AddForce(Vector2.up * controllerJumpForce);
-            soundSource.PlayOneShot(jumpSound);
+            audioOut.PlayOneShot(jumpSound);
             doubleJump = false;
         }
     }
@@ -50,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
+            myAnimator.SetLayerWeight(1, 1);
+            myAnimator.SetLayerWeight(3, 0);
             isGrounded = true;
         }
     }
@@ -74,12 +84,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            if (pickupSpot.activeSelf == true)
-            {
-                pickupSpot.SetActive(false);
-            }
             doubleJump = true;
-            soundSource.PlayOneShot(pickupSound);
+            audioOut.PlayOneShot(pickupSound);
         }
 
     }

@@ -4,31 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JetPackPickup : MonoBehaviour, ICollectable
+public class JetPackPickup : MonoBehaviour
 {
-    [SerializeField] private GameObject pickupSpot;
-    [SerializeField] private GameObject player;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void Pickup()
-    {
-        //Debug.Log();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -10,18 +10,18 @@ public class SpawnPickupOne : MonoBehaviour
     private float timeCounter = 0;
     private const float REFRESHTIME = 1;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         timeCounter -= Time.deltaTime;
 
         if (timeCounter <= 0)
         {
-            Instantiate(pickups[Random.Range(0, pickups.Count)], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
+            var newPickup = Random.Range(0, pickups.Count);
+
+            if (pickups[newPickup].name == "JetPackPickup" && !pickups[newPickup].activeInHierarchy)
+            {
+                Instantiate(pickups[newPickup], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
+            }
             timeCounter = REFRESHTIME;
         }
     }

@@ -28,27 +28,12 @@ public class SpawnTwo : MonoBehaviour
     {
         timeCounter -= Time.deltaTime;
 
-
-        float randPlat = Random.Range(3, 7);
-
-        if (platformCount == randPlat)
-        {
-            spawn = false;
-        }
-        else if (timeCounter <= 0 && spawn)
+    if (timeCounter <= 0 && spawn)
         {
             Instantiate(platforms[Random.Range(0, platforms.Count)], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
-            timeCounter = REFRESHTIME;
+            timeCounter = Random.Range(REFRESHTIME, REFRESHTIME * 2);
             platformCount++;
         }
-        else if (timeCounter <= 0 && !spawn)
-        {
-            float randTime = Random.Range(2, randPlat * 3);
-            timeCounter = randTime;
-            platformCount = 0;
-            spawn = true;
-        }
-
     }
 
     private void Resetplatforms()

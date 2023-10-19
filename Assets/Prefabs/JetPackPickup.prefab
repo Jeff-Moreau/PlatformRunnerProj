@@ -185,8 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9137de887d82614ab63291c3767d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSpot: {fileID: 2222366948391584157, guid: f0845db7eb78d0c44937e0378e3f36bc, type: 3}
-  player: {fileID: 177356286220349581, guid: 5cb07cbe4c97ee441882f737950e8fbf, type: 3}
 --- !u!58 &-4814198613852931796
 CircleCollider2D:
   m_ObjectHideFlags: 0

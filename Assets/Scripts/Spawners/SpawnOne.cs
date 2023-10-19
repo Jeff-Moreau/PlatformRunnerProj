@@ -24,25 +24,15 @@ public class SpawnOne : MonoBehaviour
     {
         timeCounter -= Time.deltaTime;
 
-        float randPlat = Random.Range(1, 4);
+        float randPlat = Random.Range(1, 2);
 
-        if (platformCount == randPlat)
-        {
-            spawn = false;
-        }
-        else if (timeCounter <= 0 && spawn)
+        if (timeCounter <= 0 && spawn)
         {
             Instantiate(platforms[Random.Range(0, platforms.Count)], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
             timeCounter = REFRESHTIME;
             platformCount++;
         }
-        else if (timeCounter <= 0 && !spawn)
-        {
-        float randTime = Random.Range(1, randPlat/2);
-            timeCounter = randTime;
-            platformCount = 0;
-            spawn = true;
-        }
+
 
     }
 }
