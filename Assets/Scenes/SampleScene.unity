@@ -10584,6 +10584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1105669659}
     m_Modifications:
+    - target: {fileID: 904321711759725121, guid: b88d3e29883d34d46a18b2ce4b8670e7, type: 3}
+      propertyPath: jumpForce
+      value: 351
+      objectReference: {fileID: 0}
     - target: {fileID: 1928423943378741280, guid: b88d3e29883d34d46a18b2ce4b8670e7, type: 3}
       propertyPath: m_Name
       value: NinjaPlayer
