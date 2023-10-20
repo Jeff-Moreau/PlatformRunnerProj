@@ -8,9 +8,11 @@ public class MovingBackgrounds : MonoBehaviour
 
     private float imageLength;
     private float imageStartPosition;
+    private Vector3 originalPos;
 
     private void Start()
     {
+        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         imageStartPosition = transform.position.x;
         imageLength = GetComponent<SpriteRenderer>().bounds.size.x;
     }
@@ -31,6 +33,11 @@ public class MovingBackgrounds : MonoBehaviour
         else if (_currentImagePosition < imageStartPosition - imageLength)
         {
             imageStartPosition -= imageLength;
+        }
+
+        if (!gameObject.activeInHierarchy)
+        {
+            gameObject.transform.position = originalPos;
         }
     }
 }

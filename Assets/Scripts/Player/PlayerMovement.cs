@@ -18,12 +18,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public int starsTotal;
     private int starAdd;
-    private float yPos;
+    private Vector3 originalPos;
+
+    public int SetStarsCollected(int amount) => starsTotal = amount;
     public int GetStarsCollected => starsTotal;
-    public float SetPlayerPosition(float y) => yPos = y;
+    
     private void Start()
     {
-        yPos = transform.position.y;
+        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         starAdd = 0;
     }
 
@@ -61,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
             myBody.AddForce(Vector2.up * controllerJumpForce);
             audioOut.PlayOneShot(jumpSound);
             doubleJump = false;
+        }
+
+        if (!gameObject.activeInHierarchy)
+        {
+            gameObject.transform.position = originalPos;
         }
     }
 

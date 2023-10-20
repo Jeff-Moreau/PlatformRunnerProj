@@ -7,10 +7,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private AudioSource audioOut;
     [SerializeField] private List<AudioClip> hurtSound;
 
-    private int health;
+    public int health;
 
     public int GetHealth => health;
     public int SetHealth(int amount) => health = amount;
+
     void Start()
     {
         health = 0;
@@ -18,10 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (health == 4)
-        {
-            
-        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,7 +29,6 @@ public class PlayerHealth : MonoBehaviour
             health++;
             var randSound = Random.Range(0, hurtSound.Count);
             audioOut.PlayOneShot(hurtSound[randSound]);
-            Debug.Log("Ouch");
         }
     }
 }

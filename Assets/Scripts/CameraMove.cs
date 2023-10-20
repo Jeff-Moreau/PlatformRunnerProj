@@ -15,9 +15,11 @@ public class CameraMove : MonoBehaviour
     private float gameSeconds;
     private float gameMinutes;
     private string newSeconds;
+    private Vector3 originalPos;
 
     private void Start()
     {
+        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         thisMusic.Play();
     }
 
@@ -32,6 +34,11 @@ public class CameraMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") >= 0.1)
         {
             transform.Translate(new Vector2(1, 0) * (moveSpeed * Time.deltaTime));
+        }
+
+        if (!gameObject.activeInHierarchy)
+        {
+            gameObject.transform.position = originalPos;
         }
     }
 

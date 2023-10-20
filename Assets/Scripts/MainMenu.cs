@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject playScreen;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject playCamera;
+    [SerializeField] private GameObject instScreen;
     [SerializeField] private AudioSource thisMusic;
 
     private void Start()
@@ -21,6 +22,12 @@ public class MainMenu : MonoBehaviour
         mainCamera.SetActive(false);
         playCamera.SetActive(true);
         playScreen.SetActive(true);
+    }
+
+    public void ClickInstructionse()
+    {
+        thisScreen.SetActive(false);
+        instScreen.SetActive(true);
     }
 
     public void ClickExitGame()
