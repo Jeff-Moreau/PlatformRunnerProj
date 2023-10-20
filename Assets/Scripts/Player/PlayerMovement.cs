@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,20 +8,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource audioOut;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private AudioClip starSound;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float controllerJumpForce;
 
     private bool doubleJump = false;
     private bool isGrounded;
+    public int starsTotal;
+    private int starAdd;
+    public int GetStarsCollected => starsTotal;
 
     private void Start()
     {
-
+        starAdd = 0;
     }
 
     private void Update()
     {
+        starsTotal = starAdd;
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             myBody.AddForce(Vector2.up * jumpForce);
@@ -86,6 +93,12 @@ public class PlayerMovement : MonoBehaviour
         {
             doubleJump = true;
             audioOut.PlayOneShot(pickupSound);
+        }
+
+        if (collision.gameObject.layer == 9)
+        {
+            starAdd += 1;
+            audioOut.PlayOneShot(starSound);
         }
 
     }

@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioOut;
+    [SerializeField] private List<AudioClip> hurtSound;
+
     private int health;
+
+    public int GetHealth => health;
 
     void Start()
     {
-        health = 2;
+        health = 0;
     }
 
     private void Update()
     {
-        if (health <= 0)
+        if (health == 4)
         {
             
         }
@@ -23,7 +28,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "BadGround")
         {
-            health--;
+            health++;
+            var randSound = Random.Range(0, hurtSound.Count);
+            audioOut.PlayOneShot(hurtSound[randSound]);
             Debug.Log("Ouch");
         }
     }

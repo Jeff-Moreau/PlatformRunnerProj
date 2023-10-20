@@ -247,10 +247,10 @@ MonoBehaviour:
   audioOut: {fileID: 2167198454151968891}
   jumpSound: {fileID: 8300000, guid: 546493d861893fa41a1881b434836c61, type: 3}
   pickupSound: {fileID: 8300000, guid: 61627738327588d41b9f337ed2972219, type: 3}
-  pickupSpot: {fileID: 5210569827777434612, guid: 9f62549d6bb45934e85cbce6cbab08d9, type: 3}
-  pickupTarget: {fileID: 1650589251539653397, guid: 95c8ebaf0ffcd7b48a9e9da42f512d38, type: 3}
+  starSound: {fileID: 8300000, guid: 3d0816f9236f936429699455296c9dab, type: 3}
   jumpForce: 350
   controllerJumpForce: 350
+  starsTotal: 0
 --- !u!114 &2796494130883921954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10677766cc4a664a9f623e2ba2b8da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioOut: {fileID: 2167198454151968891}
+  hurtSound:
+  - {fileID: 8300000, guid: 22d9823373d308748ab9614faf0c8c1f, type: 3}
+  - {fileID: 8300000, guid: b81119f4438daa5499ea844b37a2b87b, type: 3}
+  - {fileID: 8300000, guid: 0293ff8d0f52ec248a9af350bff399df, type: 3}
+  - {fileID: 8300000, guid: f6b65c601be6ba647b29ac68303f1a85, type: 3}
 --- !u!114 &2158754390610503883
 MonoBehaviour:
   m_ObjectHideFlags: 0

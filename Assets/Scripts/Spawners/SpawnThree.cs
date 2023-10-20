@@ -10,7 +10,7 @@ public class SpawnThree : MonoBehaviour
     [SerializeField] private List<GameObject> platforms;
 
     private float timeCounter;
-    private const float REFRESHTIME = 3;
+    private const float REFRESHTIME = 1.8f;
     private int platformCount;
     private bool spawn;
 

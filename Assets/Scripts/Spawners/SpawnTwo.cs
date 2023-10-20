@@ -12,7 +12,7 @@ public class SpawnTwo : MonoBehaviour
     private List<Transform> positions;
 
     private float timeCounter;
-    private const float REFRESHTIME = 2;
+    private const float REFRESHTIME = 1.2f;
     private bool canPlace;
     private int platformCount;
     private bool spawn;
