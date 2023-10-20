@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TheScreens : MonoBehaviour
 {
-    [SerializeField] private PlayerHealth player;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject playScreen;
     [SerializeField] private GameObject mainCamera;
@@ -12,7 +13,7 @@ public class TheScreens : MonoBehaviour
 
     void Update()
     {
-        if (player.GetHealth == 4)
+        if (playerHealth.GetHealth == 4 || player.transform.position.y < -4)
         {
             playCamera.SetActive(false);
             playScreen.SetActive(false);

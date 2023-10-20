@@ -9,14 +9,14 @@ public class TryAgain : MonoBehaviour
     [SerializeField] private GameObject playScreen;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject playCamera;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerMovement player;
     [SerializeField] private AudioSource thisMusic;
 
     private void Start()
     {
         thisMusic.Play();
-        mainCamera.SetActive(true);
-        playCamera.SetActive(false);
-        playScreen.SetActive(false);
     }
 
     public void ClickStartGame()

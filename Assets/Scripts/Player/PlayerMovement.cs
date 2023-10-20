@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public int starsTotal;
     private int starAdd;
+    private float yPos;
     public int GetStarsCollected => starsTotal;
-
+    public float SetPlayerPosition(float y) => yPos = y;
     private void Start()
     {
+        yPos = transform.position.y;
         starAdd = 0;
     }
 

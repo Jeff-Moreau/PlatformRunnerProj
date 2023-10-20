@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private int health;
 
     public int GetHealth => health;
-
+    public int SetHealth(int amount) => health = amount;
     void Start()
     {
         health = 0;
