@@ -15,7 +15,7 @@ public class JetPackPickupManager : MonoBehaviour
     {
         jetPacks = new List<GameObject>();
 
-        amountOfJetPacks = 2;
+        amountOfJetPacks = 1;
 
         for (int i = 0; i < amountOfJetPacks; i++)
         {

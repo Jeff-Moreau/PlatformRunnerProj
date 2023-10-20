@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IDamageable
+public class PlayerHealth : MonoBehaviour
 {
     private int health;
 
@@ -11,13 +11,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         health = 2;
     }
 
-    void Update()
+    private void Update()
     {
-        
+        if (health <= 0)
+        {
+            
+        }
     }
 
-    public void Damage(int damageRecieved)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= damageRecieved;
+        if (collision.gameObject.tag == "BadGround")
+        {
+            health--;
+            Debug.Log("Ouch");
+        }
     }
 }

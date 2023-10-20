@@ -25,9 +25,21 @@ public class SpawnFour : MonoBehaviour
     {
         timeCounter -= Time.deltaTime;
 
+        var randPercent = Random.Range(0, 101);
+        var goodBad = 0;
+
+        if (randPercent > 80)
+        {
+            goodBad = 1;
+        }
+        else if (randPercent < 80)
+        {
+            goodBad = 0;
+        }
+
         if (timeCounter <= 0 && spawn)
         {
-            Instantiate(platforms[Random.Range(0, platforms.Count)], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
+            Instantiate(platforms[goodBad], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0), Quaternion.identity);
             timeCounter = Random.Range(REFRESHTIME, REFRESHTIME * 2);
             platformCount++;
         }

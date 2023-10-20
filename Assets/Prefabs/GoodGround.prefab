@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5696715835570209869}
   - component: {fileID: 4433657083791488081}
   m_Layer: 6
-  m_Name: fcd447fe37d9bae3007fb904b0236aae
+  m_Name: GoodGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
