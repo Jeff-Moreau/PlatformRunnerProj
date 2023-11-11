@@ -19,7 +19,7 @@ public class TheScreens : MonoBehaviour
         if (playerHealth.GetHealth >= 4 || player.transform.position.y < -5)
         {
             playerMove.SetStarsCollected(0);
-            playerHealth.SetHealth(0);
+            playerHealth.SetHealth(4);
             playCamera.transform.position = new Vector3(0,0,-10);
             player.transform.position = new Vector3(-3.911f, -3.75f, 0);
             parallax.transform.position = Vector3.zero;
